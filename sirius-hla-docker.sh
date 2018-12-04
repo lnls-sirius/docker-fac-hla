@@ -39,6 +39,6 @@ echo "VACA_PREFIX=$VACA_PREFIX"
 echo "EPICS_CA_ADDR_LIST=$EPICS_CA_ADDR_LIST"
 echo ""
 
-docker run --network=host -it --rm -e DISPLAY=$DISPLAY -e VACA_PREFIX=$VACA_PREFIX -e EPICA_CA_AUTO_ADDR_LIST=$EPICS_CA_AUTO_ADDR_LIST -e EPICS_CA_ADDR_LIST="$EPICS_CA_ADDR_LIST" -v /tmp/.X11-unix:/tmp/.X11-unix lnlsfac/docker-hla /bin/bash -c $HLA
+docker run --network=host -it --rm -e DISPLAY=$DISPLAY -e VACA_PREFIX=$VACA_PREFIX -e EPICA_CA_AUTO_ADDR_LIST=$EPICS_CA_AUTO_ADDR_LIST -e EPICS_CA_ADDR_LIST="$EPICS_CA_ADDR_LIST" -v /tmp/.X11-unix:/tmp/.X11-unix lnls/fac-hla /bin/bash -c $HLA
 
 exit 0
