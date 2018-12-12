@@ -17,3 +17,5 @@ RUN python3.6 setup.py develop
 
 WORKDIR /repos/hla/pyqt-apps
 RUN make develop
+
+ENTRYPOINT bash
