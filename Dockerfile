@@ -1,9 +1,13 @@
 FROM lnlsfac/docker-qt
 
 WORKDIR /repos
-RUN git clone https://github.com/lnls-sirius/dev-packages.git && \
-	git clone https://github.com/lnls-sirius/pydm.git && \
-	git clone https://github.com/lnls-sirius/hla.git
+RUN git clone https://github.com/lnls-fac/mathphys.git && \
+  git clone https://github.com/lnls-sirius/dev-packages.git && \
+  git clone https://github.com/lnls-sirius/pydm.git && \
+  git clone https://github.com/lnls-sirius/hla.git
+
+WORKDIR /repos/mathphys
+RUN python3.6 setup.py develop
 
 WORKDIR /repos/dev-packages/siriuspy
 RUN python3.6 setup.py develop
@@ -13,4 +17,3 @@ RUN python3.6 setup.py develop
 
 WORKDIR /repos/hla/pyqt-apps
 RUN make develop
-
